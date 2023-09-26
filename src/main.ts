@@ -2,50 +2,60 @@ type Student = {
     firstName: string
     lastName: string
     age: number
-    report: schoolReport[]
+    report: schoolReport[];
 }
-type schoolReport = 1 | 2 | 3 | 4 | 5 | 6 | "A" | "B" | "C" | "D" | "E" | "F"
-
-
-let ming = {
-    firstName: 'Ming',
-    lastName: 'Tay',
-    age: 18,
-    report: [1, 2, "A", 3, 1, undefined, 3]
+type schoolReport = {
+    class: "Kunst" | "Biologie" | "Chemie" | "Geologie"
+    grade: grades[]
 }
-let helene = {
-    firstName: 'Helene',
-    lastName: 'Pinsuwan',
-    age: 17,
-    report: [1, 2, "A", "B", 1, undefined, 3]
-}
-let sum = {
-    firstName: 'Summi',
-    lastName: 'Pinsuwan',
-    age: 7,
-    report: [1, 2, "A", "B", 1, undefined, 3]
-}
+type grades = 1 | 2 | 3 | 4 | 5 | 6 | "A" | "B" | "C" | "D" | "E" | "F" | undefined;
 
 function printStudent(student: Student) {
-    console.log(
-        student.firstName + " " + student.lastName + " (" + student.age + ")" + "\n" +
-        '='.repeat(30) + "\n" +
-        "Noten: " + student.report.map(note => (note !== undefined ? note.toString() : '*')).join(", "))
+    let name = student.firstName + " " + student.lastName + " (" + student.age + ")"
+    let noten = student.report.map(r => r.class + ": " + r.grade.map(note => ((note !== undefined) ? note.toString() : '*')).join(", ") + "\n").join("")
+    console.log("%c" +
+        name + "\n" +
+        '='.repeat(name.length - 2) + "\n" +
+        "Noten:\n" +
+        noten,
+        "font-family: system-ui; color: hotpink")
 }
 
+// + student.report.map(note => ((note !== undefined) ? note.toString() : '*')).join(", ")
 function printStudentList(studentList: Student[]) {
     for (let student of studentList) {
         printStudent(student)
     }
 }
+function averageGrage(studentList: Student) {
+    for(let i = 0; i < studentList.report.length; i++) {
+        console.log(studentList.report[i].grade)
+    }
 
-const students: Student[] = [ming, helene,
+
+}
+
+averageGrage(students)
+
+const students: Student[] = [
+    {
+        firstName: 'Ming',
+        lastName: 'Tay',
+        age: 18,
+        report: [{class: "Chemie", grade: ["B", 1, undefined]}, {class: "Kunst", grade: ["A", 1]}]
+    },
+    {
+        firstName: 'Helene',
+        lastName: 'Pinsuwan',
+        age: 17,
+        report: [{class: "Chemie", grade: ["B", 2, 3]}, {class: "Kunst", grade: ["A", 1]}]
+    },
     {
 
-    firstName: 'Summi',
-    lastName: 'Pinsuwan',
-    age: 7,
-    report: [1, 2, "A", "B", 1, undefined, 3]
+        firstName: 'Summi',
+        lastName: 'Pinsuwan',
+        age: 7,
+        report: [{class: "Chemie", grade: ["B"]}]
 
-}]
+    }]
 printStudentList(students)

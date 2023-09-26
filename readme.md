@@ -44,3 +44,32 @@ Cäsar Schmidt (17)
     ==========================
 
 Noten: A,1,*, 3,2,4,5
+
+## Bonus Aufgabe
+1. schreibt eine Funktion, die die Namen der Studenten mit "=====" hervorhebt. Dabei soll für jeden Character im Eintrag genau so viele "="-Zeichen verwendet werden wie für den Namen und das Alter des Studenten benötigt werden.
+   
+Anton Meier (16)
+    ===================
+ Noten: 1,4,3,1,A,*,1,2
+
+
+Berta Müller (17)
+    ==================
+    Noten: A,*,1
+
+
+Cäsar Schmidt (17)
+    =============== 
+Noten: A,1,* , 3,2,4,5
+
+2. strukturiert den Studenten und das Zeugnis so um, dass Noten bestimmten Fächern zugeordnet werden können. Anschließend soll der Student mit den entsprechenden Noten pro Fach formatiert ausgegeben werden.
+   Florian Weber (14)
+   ==============
+
+Noten:
+Sport: A,1,*
+Kunst: 3,2,4,5
+Mathe: 1,2,A
+
+3. Berechne pro Schülerin und später auch für die gesamte Liste von Schülerinnen den Notendurchschnitt. Diskutiert gemeinsam auch, wie Ihr die Berechnung genau gestalten wollt (inkl. Umgang mit undefined, Gewichtungen wenn ein*e mehr Noten als andere hat, usw)
+
